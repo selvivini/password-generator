@@ -30,7 +30,7 @@ function generatePassword(){
   // alert to validate user to include a character type
   if(!lowercase && !uppercase && !numbers && !specialcharacters){
     alert("please choose atleast one character type");
-    return;
+    
   }
   // creating an arrayof charcodes and assigning it to a variable based on user input
   var charcodes= [];
