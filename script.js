@@ -16,18 +16,21 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
-  // prompt user to enter a password length
+  // prompt user to enter a password length and choose a valid number
   var passwordLength = prompt("choose a password length between 8 and 128");
-  if(!passwordLength || passwordLength<8 || passwordLength>128){
-       alert("please enter a valid number between 8 and 128")
+ if(!passwordLength || passwordLength<8 || passwordLength>128){
+  passwordLength = prompt("please enter a valid number between 8 and 128");
   }
   //prompt user to choose a character type
   var lowercase = confirm("Do u want to include lowerCase letters?");
   var uppercase = confirm("Do u want to include upperCase letters?");
   var numbers = confirm("Do u want to include numbers?");
   var specialcharacters = confirm("Do u want to include Specialcharacters");
+  
+  // alert to validate user to include a character type
   if(!lowercase && !uppercase && !numbers && !specialcharacters){
-    alert("please choose atleast one character type")
+    alert("please choose atleast one character type");
+    return;
   }
   // creating an arrayof charcodes and assigning it to a variable based on user input
   var charcodes= [];
@@ -57,6 +60,7 @@ function generatePassword(){
   var password=[];
   for( i=0;i<passwordLength; i++){
       var characterCode= charcodes[Math.floor(Math.random()* charcodes.length)];
+     //method to convert the charactercodes to string
       password.push(String.fromCharCode(characterCode));
   }
  return password.join('');  
