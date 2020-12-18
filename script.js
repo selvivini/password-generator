@@ -3,6 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  //passing the generatePassword function to the password variable
   var password = generatePassword();
   // console.log(password)
   var passwordText = document.querySelector("#password");
@@ -15,12 +16,12 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
-  // prompt to enter a password length
+  // prompt user to enter a password length
   var passwordLength = prompt("choose a password length between 8 and 128");
   if(!passwordLength || passwordLength<8 || passwordLength>128){
        alert("please enter a valid number between 8 and 128")
   }
-  //prompt to choose a character type
+  //prompt user to choose a character type
   var lowercase = confirm("Do u want to include lowerCase letters?");
   var uppercase = confirm("Do u want to include upperCase letters?");
   var numbers = confirm("Do u want to include numbers?");
@@ -40,7 +41,7 @@ function generatePassword(){
    
   if(lowercase){
    charcodes= charcodes.concat(lower_charcode)
-   console.log(charcodes)
+   
    }
    if(uppercase ){
    charcodes = charcodes.concat(upper_charcode)
@@ -52,7 +53,7 @@ function generatePassword(){
   charcodes = charcodes.concat(special_charcode)
   }
   
-  //generate a random password based on charcodes selected
+  //generate a random password based on  charactercodes selected
   var password=[];
   for( i=0;i<passwordLength; i++){
       var characterCode= charcodes[Math.floor(Math.random()* charcodes.length)];
@@ -64,7 +65,7 @@ function generatePassword(){
  
 
 
-// function to create an array of charcodes based on user options
+// function to create an array of charactercodes(Ascii) range  based on user options
  function arrayLowtohigh(low,high){
   var arr= [];
   for(i=low; i<=high; i++){
