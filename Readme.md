@@ -37,3 +37,6 @@ a prompt appers to choose aleast one character type
 once the user confirms the series of prompts a random password is generated inside the textArea based on 
 user's choice of character type
 ![generatedpassword](Assets/generatedpassword.PNG)
+
+###Github page 
+[password-generator live](https://selvivini.github.io/password-generator/)
