@@ -1,4 +1,5 @@
 # 03 Home-Work-Assignment
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Password-Generator
 Using Javascript created a password generator application
 that generated the random password which is very secured
